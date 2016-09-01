@@ -1,0 +1,45 @@
+
+//
+//  PrefixHeader.pch
+//  GPText
+//
+//  Created by dandan on 16/9/1.
+//  Copyright © 2016年 dandan. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+/**
+ *  屏幕尺寸
+ */
+#define CGSCREEN CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5AND5S (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_6AND6S (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6PAND6SP (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0
+
+#define GPEmotionToolbarButtonMaxCount 4
+/** 表情相关 */
+// 表情的最大行数
+#define GPEmotionMaxRows 3
+// 表情的最大列数
+#define GPEmotionMaxCols 7
+// 每页最多显示多少个表情
+#define GPEmotionMaxCountPerPage (GPEmotionMaxRows * GPEmotionMaxCols - 1)
+
+#import "UIView+GPExtension.h"
+#import "UIImage+GPExtion.h"
+#import <MJExtension.h>
+#import <SDAutoLayout.h>
+#import "NSString+Emoji.h"
+
+#endif

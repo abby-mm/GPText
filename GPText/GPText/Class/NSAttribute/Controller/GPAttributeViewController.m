@@ -7,6 +7,7 @@
 //
 
 #import "GPAttributeViewController.h"
+#import "GPAPPViewController.h"
 
 @interface GPAttributeViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *oneLabel;
@@ -54,7 +55,10 @@
     [arrTwoStr appendAttributedString:TwooStr];
     self.twoLabel.attributedText = arrTwoStr;
 }
+
 #pragma mark - 事件响应
 - (IBAction)BtnClick:(UIButton *)sender {
+    GPAPPViewController *AppVc = [[GPAPPViewController alloc]init];
+    [self.navigationController pushViewController:AppVc animated:YES];
 }
 @end

@@ -29,9 +29,9 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-3A-R4M">
-                                <rect key="frame" x="270" y="285" width="60" height="30"/>
-                                <state key="normal" title="综合应用">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aRD-3A-R4M">
+                                <rect key="frame" x="240" y="285" width="120" height="30"/>
+                                <state key="normal" title="快点我哦" backgroundImage="3">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -61,4 +61,7 @@
             <point key="canvasLocation" x="1005" y="162"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="3" width="80" height="38"/>
+    </resources>
 </document>
