@@ -27,7 +27,7 @@
 #pragma mark - 初始化
 - (void)loadData
 {
-    self.dataS = @[@"富文本"];
+    self.dataS = @[@"富文本",@"分页显示文字"];
 }
 - (void)regisCell
 {
