@@ -55,8 +55,9 @@
     toolbar.width = SCREEN_WIDTH;
     toolbar.height = 44;
     toolbar.y = SCREEN_HEIGHT - toolbar.height;
+    __weak typeof(self) weakSelf = self;
     toolbar.btnClickBlock = ^(GPTollsBtnType type){
-        [self toolBtnClick:type];
+        [weakSelf toolBtnClick:type];
     };
     [self.view addSubview:toolbar];
     self.toolbar = toolbar;
@@ -123,7 +124,6 @@
 {
     if (!_keyboard) {
         self.keyboard = [GPEmotionKeyboard keyboard];
-        self.keyboard.backgroundColor = [UIColor blueColor];
         self.keyboard.width = SCREEN_WIDTH;
         self.keyboard.height = 220;
     }

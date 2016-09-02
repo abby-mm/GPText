@@ -39,10 +39,11 @@
 }
 - (void)addToolbar
 {
+    __weak typeof(self) weakSelf = self;
     GPEmotionToolbar *toollbar = [[GPEmotionToolbar alloc] init];
     [self addSubview:toollbar];
     toollbar.emtiontypeBlock = ^(GPEmtionType type){
-        [self setEmtiontype:type];
+        [weakSelf setEmtiontype:type];
     };
     self.toollbar = toollbar;
 }
@@ -91,6 +92,7 @@
     if (!_defaultEmotions) {
         NSString *plist = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/default/info.plist" ofType:nil];
         self.defaultEmotions = [GPEmotion mj_objectArrayWithFile:plist];
+        [self.defaultEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@"EmotionIcons/default"];
     }
     return _defaultEmotions;
 }
@@ -100,6 +102,7 @@
     if (!_emojiEmotions) {
         NSString *plist = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/emoji/info.plist" ofType:nil];
         self.emojiEmotions = [GPEmotion mj_objectArrayWithFile:plist];
+        [self.emojiEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@"EmotionIcons/emoji"];
     }
     return _emojiEmotions;
 }
@@ -109,6 +112,7 @@
     if (!_lxhEmotions) {
         NSString *plist = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/lxh/info.plist" ofType:nil];
         self.lxhEmotions = [GPEmotion mj_objectArrayWithFile:plist];
+        [self.lxhEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@"EmotionIcons/lxh"];
     }
     return _lxhEmotions;
 }

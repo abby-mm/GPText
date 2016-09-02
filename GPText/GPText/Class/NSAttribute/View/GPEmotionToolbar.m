@@ -25,6 +25,7 @@
     }
     return self;
 }
+
 - (UIButton *)setupButton:(NSString *)title tag:(GPEmtionType)tag
 {
     UIButton *button = [[UIButton alloc] init];
@@ -52,6 +53,14 @@
     
     return button;
 }
+
+
+//- (void)setEmtiontypeBlock:(emtionTypeBlock)emtiontypeBlock
+//{
+//    _emtiontypeBlock = emtiontypeBlock;
+//    UIButton *defaultButton = (UIButton *)[self viewWithTag:GPEmotionTypeDefault];
+//    [self buttonClick:defaultButton];
+//}
 
 - (void)buttonClick:(UIButton *)button
 {

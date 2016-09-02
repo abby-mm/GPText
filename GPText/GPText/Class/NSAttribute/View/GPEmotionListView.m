@@ -49,13 +49,23 @@
 {
     _emotions = emotions;
     
-    self.pageControl.numberOfPages = (emotions.count + GPEmotionMaxCountPerPage - 1) / GPEmotionMaxCountPerPage;
+    NSInteger totlas = (emotions.count + GPEmotionMaxCountPerPage - 1) / GPEmotionMaxCountPerPage;
+    NSInteger currrentGridViewCount = self.scrollView.subviews.count;
+    
+    self.pageControl.numberOfPages = totlas;
     self.pageControl.currentPage = 0;
     
-    [self.scrollView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    for (NSInteger i = 0; i < totlas; i ++) {
+        
+        GPEmottionGridView *gridView = nil;
+        
+        if (i >= currrentGridViewCount) {
+            gridView = [[GPEmottionGridView alloc]init];
+            [self.scrollView addSubview:gridView];
+        } else {
+            gridView = self.scrollView.subviews[i];
+        }
 
-    for (NSInteger i = 0; i < self.pageControl.numberOfPages; i ++) {
-        GPEmottionGridView *gridView = [[GPEmottionGridView alloc]init];
         NSInteger loc = i * GPEmotionMaxCountPerPage;
         NSInteger len = GPEmotionMaxCountPerPage;
         if (loc + len > emotions.count) {
@@ -65,7 +75,15 @@
         NSArray *emotionS = [emotions subarrayWithRange:range];
         gridView.emotions = emotionS;
         [self.scrollView addSubview:gridView];
+        gridView.hidden = NO;
     }
+    for (NSInteger i = totlas; i<currrentGridViewCount; i++) {
+        GPEmottionGridView *gridView = self.scrollView.subviews[i];
+        gridView.hidden = YES;
+    }
+       [self setNeedsLayout];
+    self.scrollView.contentOffset = CGPointZero;
+
 }
 #pragma mark - 内部方法
 - (void)layoutSubviews
@@ -95,7 +113,5 @@
 {
     self.pageControl.currentPage = (int)(scrollView.contentOffset.x / scrollView.width + 0.5);
 }
-
-
 
 @end
