@@ -19,13 +19,29 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GPText/Class/NSAttribute/View/GPEmottionGridView.m"
-            timestampString = "494480880.388677"
+            filePath = "GPText/Class/NSAttribute/View/GPEmotionListView.m"
+            timestampString = "494667598.912034"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "-layoutSubviews"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
+            landmarkName = "-setEmotions:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GPText/Class/NSAttribute/View/GPEmotionListView.m"
+            timestampString = "494667605.811935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
+            landmarkName = "-setEmotions:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -31,8 +31,8 @@
 {
     if (self = [super initWithFrame:frame]) {
         
-        [self addToolbar];
         [self addListView];
+        [self addToolbar];
         self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"emoticon_keyboard_background"]];
     }
     return self;
@@ -58,11 +58,11 @@
 {
     switch (type) {
         case GPEmotionTypeRecent: {
-            
             break;
         }
         case GPEmotionTypeDefault: {
             self.listView.emotions = self.defaultEmotions;
+            
             break;
         }
         case GPEmotionTypeEmoji: {
@@ -86,6 +86,7 @@
     self.listView.width = self.width;
     self.listView.height = self.toollbar.y;
 }
+
 #pragma mark - set,get
 - (NSArray *)defaultEmotions
 {

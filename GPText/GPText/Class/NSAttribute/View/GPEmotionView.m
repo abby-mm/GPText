@@ -30,7 +30,6 @@
         [self setImage:nil forState:UIControlStateNormal];
     } else { // 图片表情
         NSString *icon = [NSString stringWithFormat:@"%@/%@", emotion.directory, emotion.png];
-        NSLog(@"%@",icon);
         [self setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
         [self setTitle:nil forState:UIControlStateNormal];
     }

@@ -18,10 +18,9 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setupButton:@"最近" tag:GPEmotionTypeRecent];
-        UIButton *defaultButton = [self setupButton:@"默认" tag:GPEmotionTypeDefault];
+        [self setupButton:@"默认" tag:GPEmotionTypeDefault];
         [self setupButton:@"Emoji" tag:GPEmotionTypeEmoji];
         [self setupButton:@"呵呵哒" tag:GPEmotionTypeLxh];
-        [self buttonClick:defaultButton];
     }
     return self;
 }
@@ -54,13 +53,12 @@
     return button;
 }
 
-
-//- (void)setEmtiontypeBlock:(emtionTypeBlock)emtiontypeBlock
-//{
-//    _emtiontypeBlock = emtiontypeBlock;
-//    UIButton *defaultButton = (UIButton *)[self viewWithTag:GPEmotionTypeDefault];
-//    [self buttonClick:defaultButton];
-//}
+- (void)setEmtiontypeBlock:(emtionTypeBlock)emtiontypeBlock
+{
+    _emtiontypeBlock = emtiontypeBlock;
+    UIButton *defaultButton = (UIButton *)[self viewWithTag:GPEmotionTypeDefault];
+    [self buttonClick:defaultButton];
+}
 
 - (void)buttonClick:(UIButton *)button
 {

@@ -54,11 +54,9 @@
     
     self.pageControl.numberOfPages = totlas;
     self.pageControl.currentPage = 0;
+    GPEmottionGridView *gridView = nil;
     
     for (NSInteger i = 0; i < totlas; i ++) {
-        
-        GPEmottionGridView *gridView = nil;
-        
         if (i >= currrentGridViewCount) {
             gridView = [[GPEmottionGridView alloc]init];
             [self.scrollView addSubview:gridView];
@@ -71,12 +69,14 @@
         if (loc + len > emotions.count) {
             len = emotions.count - loc;
         }
+
         NSRange range = NSMakeRange(loc, len);
-        NSArray *emotionS = [emotions subarrayWithRange:range];
-        gridView.emotions = emotionS;
-        [self.scrollView addSubview:gridView];
+        NSArray *gridViewemotionS = [emotions subarrayWithRange:range];
+        gridView.emotions = gridViewemotionS;
+        
         gridView.hidden = NO;
     }
+    
     for (NSInteger i = totlas; i<currrentGridViewCount; i++) {
         GPEmottionGridView *gridView = self.scrollView.subviews[i];
         gridView.hidden = YES;
