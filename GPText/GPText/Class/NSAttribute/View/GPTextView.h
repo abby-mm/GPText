@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class GPEmotion;
 @interface GPTextView : UITextView
-
+- (void)appendEmotion:(GPEmotion *)emotion;
 @end

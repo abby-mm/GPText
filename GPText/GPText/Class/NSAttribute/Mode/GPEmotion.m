@@ -7,8 +7,10 @@
 //
 
 #import "GPEmotion.h"
+#import <MJExtension.h>
 
 @implementation GPEmotion
+MJCodingImplementation
 
 - (void)setCode:(NSString *)code
 {

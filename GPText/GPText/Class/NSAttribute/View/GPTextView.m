@@ -8,6 +8,7 @@
 
 #import "GPTextView.h"
 #import "UIView+SDAutoLayout.h"
+#import "GPEmotion.h"
 
 @interface GPTextView()<UITextViewDelegate>
 @property (nonatomic, weak) UILabel *placeLabel;
@@ -53,9 +54,52 @@
     [self.placeLabel setSingleLineAutoResizeWithMaxWidth:200];
 
 }
+#pragma mark - 公共方法
+- (void)appendEmotion:(GPEmotion *)emotion
+{
+    
+    if (emotion.emoji) { // emoji表情
+        [self insertText:emotion.emoji];
+    } else {
+        
+        NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];
+        
+        NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+        
+        attach.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@/%@", emotion.directory, emotion.png]];
+        attach.bounds = CGRectMake(0, -3, self.font.lineHeight, self.font.lineHeight);
+        
+        NSAttributedString *attachString = [NSAttributedString attributedStringWithAttachment:attach];
+        
+        NSInteger insertIndex = self.selectedRange.location;
+        
+        [attributedText insertAttributedString:attachString atIndex:insertIndex];
+        
+        [attributedText addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, attributedText.length)];
+        
+        self.attributedText = attributedText;
+        
+        self.selectedRange = NSMakeRange(insertIndex + 1, 0);
+    }
+}
+
 #pragma mark - 事件处理
 - (void)textDidChange
 {
     self.placeLabel.hidden = (self.text.length != 0);
 }
+#pragma mark - set,get
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    
+    [self textDidChange];
+}
+- (void)setAttributedText:(NSAttributedString *)attributedText
+{
+    [super setAttributedText:attributedText];
+    
+    [self textDidChange];
+}
+
 @end

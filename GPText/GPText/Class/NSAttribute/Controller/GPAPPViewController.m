@@ -129,14 +129,14 @@
 - (void)emotionDidSelected:(NSNotification *)note
 {
     GPEmotion *emotion = note.userInfo[GPSelectedEmotion];
+    [self.textView appendEmotion:emotion];
 }
 
-/**
- *  当点击表情键盘上的删除按钮时调用
- */
 - (void)emotionDidDeleted:(NSNotification *)note
 {
+    [self.textView deleteBackward];
 }
+
 
 #pragma mark - set,get
 -(GPEmotionKeyboard *)keyboard

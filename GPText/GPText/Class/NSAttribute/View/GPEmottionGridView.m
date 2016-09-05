@@ -10,6 +10,7 @@
 #import "GPEmotion.h"
 #import "GPEmotionView.h"
 #import "GPEmtionPopView.h"
+#import "GPEmtionTool.h"
 
 @interface GPEmottionGridView()
 @property (nonatomic, weak) UIButton *deleteButton;
@@ -96,7 +97,8 @@
 - (void)emotionClick:(GPEmotionView *)emotionView
 {
     [self.popView showFromEmotionView:emotionView];
-    
+    [self selecteEmotion:emotionView.emotion];
+
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.popView dismiss];
     });
@@ -134,6 +136,8 @@
 - (void)selecteEmotion:(GPEmotion *)emotion
 {
     if (emotion == nil) return;
+    
+    [GPEmtionTool addRecentEmotion:emotion];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:GPEmotionDidSelectedNotification object:nil userInfo:@{GPSelectedEmotion : emotion}];
 }

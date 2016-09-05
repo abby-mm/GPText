@@ -10,13 +10,11 @@
 #import "GPEmotionToolbar.h"
 #import "GPEmotion.h"
 #import "GPEmotionListView.h"
+#import "GPEmtionTool.h"
 
 @interface GPEmotionKeyboard()
 @property (nonatomic, weak) GPEmotionToolbar *toollbar;
 @property (nonatomic, weak) GPEmotionListView *listView;
-@property (nonatomic, strong) NSArray *defaultEmotions;
-@property (nonatomic, strong) NSArray *emojiEmotions;
-@property (nonatomic, strong) NSArray *lxhEmotions;
 @end
 
 @implementation GPEmotionKeyboard
@@ -58,19 +56,20 @@
 {
     switch (type) {
         case GPEmotionTypeRecent: {
+            self.listView.emotions = [GPEmtionTool recentEmotions];
             break;
         }
         case GPEmotionTypeDefault: {
-            self.listView.emotions = self.defaultEmotions;
+            self.listView.emotions = [GPEmtionTool defaultEmotions];
             
             break;
         }
         case GPEmotionTypeEmoji: {
-            self.listView.emotions = self.emojiEmotions;
+            self.listView.emotions = [GPEmtionTool emojiEmotions];
             break;
         }
         case GPEmotionTypeLxh: {
-            self.listView.emotions = self.lxhEmotions;
+            self.listView.emotions = [GPEmtionTool lxhEmotions];
             break;
         }
     }
@@ -88,33 +87,5 @@
 }
 
 #pragma mark - set,get
-- (NSArray *)defaultEmotions
-{
-    if (!_defaultEmotions) {
-        NSString *plist = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/default/info.plist" ofType:nil];
-        self.defaultEmotions = [GPEmotion mj_objectArrayWithFile:plist];
-        [self.defaultEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@"EmotionIcons/default"];
-    }
-    return _defaultEmotions;
-}
 
-- (NSArray *)emojiEmotions
-{
-    if (!_emojiEmotions) {
-        NSString *plist = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/emoji/info.plist" ofType:nil];
-        self.emojiEmotions = [GPEmotion mj_objectArrayWithFile:plist];
-        [self.emojiEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@"EmotionIcons/emoji"];
-    }
-    return _emojiEmotions;
-}
-
-- (NSArray *)lxhEmotions
-{
-    if (!_lxhEmotions) {
-        NSString *plist = [[NSBundle mainBundle] pathForResource:@"EmotionIcons/lxh/info.plist" ofType:nil];
-        self.lxhEmotions = [GPEmotion mj_objectArrayWithFile:plist];
-        [self.lxhEmotions makeObjectsPerformSelector:@selector(setDirectory:) withObject:@"EmotionIcons/lxh"];
-    }
-    return _lxhEmotions;
-}
 @end

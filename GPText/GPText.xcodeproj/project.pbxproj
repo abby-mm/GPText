@@ -20,6 +20,7 @@
 		AC6E544B1D783112008C31E0 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = AC6E544A1D783112008C31E0 /* EmotionIcons */; };
 		AC862C5A1D7C5BB9006D359C /* GPEmtionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC862C591D7C5BB9006D359C /* GPEmtionPopView.m */; };
 		AC862C5C1D7C5BCA006D359C /* GPEmtionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC862C5B1D7C5BCA006D359C /* GPEmtionPopView.xib */; };
+		AC862D1A1D7D46AB006D359C /* GPEmtionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AC862D191D7D46AB006D359C /* GPEmtionTool.m */; };
 		ACF391ED1D76C33E00FE1110 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EC1D76C33E00FE1110 /* main.m */; };
 		ACF391F01D76C33E00FE1110 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EF1D76C33E00FE1110 /* AppDelegate.m */; };
 		ACF391F31D76C33E00FE1110 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391F21D76C33E00FE1110 /* ViewController.m */; };
@@ -82,6 +83,8 @@
 		AC862C581D7C5BB9006D359C /* GPEmtionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEmtionPopView.h; sourceTree = "<group>"; };
 		AC862C591D7C5BB9006D359C /* GPEmtionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEmtionPopView.m; sourceTree = "<group>"; };
 		AC862C5B1D7C5BCA006D359C /* GPEmtionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPEmtionPopView.xib; sourceTree = "<group>"; };
+		AC862D181D7D46AB006D359C /* GPEmtionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEmtionTool.h; sourceTree = "<group>"; };
+		AC862D191D7D46AB006D359C /* GPEmtionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEmtionTool.m; sourceTree = "<group>"; };
 		ACF391E81D76C33E00FE1110 /* GPText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF391EC1D76C33E00FE1110 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACF391EE1D76C33E00FE1110 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -407,6 +410,8 @@
 		ACF3923F1D77C6A700FE1110 /* AppController */ = {
 			isa = PBXGroup;
 			children = (
+				AC862D181D7D46AB006D359C /* GPEmtionTool.h */,
+				AC862D191D7D46AB006D359C /* GPEmtionTool.m */,
 				ACF392401D77C6EB00FE1110 /* GPAPPViewController.h */,
 				ACF392411D77C6EB00FE1110 /* GPAPPViewController.m */,
 			);
@@ -602,6 +607,7 @@
 				ACF3923A1D76E3C000FE1110 /* GPHeightViewController.m in Sources */,
 				AC6E54491D7826EF008C31E0 /* NSString+Emoji.m in Sources */,
 				AC6E54451D781E52008C31E0 /* GPEmottionGridView.m in Sources */,
+				AC862D1A1D7D46AB006D359C /* GPEmtionTool.m in Sources */,
 				AC6E52781D780846008C31E0 /* GPEmotionToolbar.m in Sources */,
 				ACF392421D77C6EB00FE1110 /* GPAPPViewController.m in Sources */,
 				AC6E52751D7801FA008C31E0 /* UIImage+GPExtion.m in Sources */,
