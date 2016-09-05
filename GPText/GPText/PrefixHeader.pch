@@ -35,6 +35,12 @@
 #define GPEmotionMaxCols 7
 // 每页最多显示多少个表情
 #define GPEmotionMaxCountPerPage (GPEmotionMaxRows * GPEmotionMaxCols - 1)
+// 表情选中的通知
+#define GPEmotionDidSelectedNotification @"GPEmotionDidSelectedNotification"
+// 点击删除按钮的通知
+#define GPEmotionDidDeletedNotification @"GPEmotionDidDeletedNotification"
+// 通知里面取出表情用的key
+#define GPSelectedEmotion @"GPSelectedEmotion"
 
 #import "UIView+GPExtension.h"
 #import "UIImage+GPExtion.h"

@@ -10,6 +10,7 @@
 #import "GPTextView.h"
 #import "GPToolbar.h"
 #import "GPEmotionKeyboard.h"
+#import "GPEmotion.h"
 
 @interface GPAPPViewController ()<UITextViewDelegate>
 @property (nonatomic, weak)GPTextView *textView;
@@ -24,9 +25,8 @@
     
     [self setupTextView];
     [self setuipToolbar];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [self setupNotion];
+   
 }
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -39,6 +39,13 @@
 }
 
 #pragma mark - 初始化方法
+- (void)setupNotion
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidSelected:) name:GPEmotionDidSelectedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(emotionDidDeleted:) name:GPEmotionDidDeletedNotification object:nil];
+}
 - (void)setupTextView
 {
     GPTextView *textView = [[GPTextView alloc]init];
@@ -117,6 +124,18 @@
         [self.textView becomeFirstResponder];
     });
 
+}
+
+- (void)emotionDidSelected:(NSNotification *)note
+{
+    GPEmotion *emotion = note.userInfo[GPSelectedEmotion];
+}
+
+/**
+ *  当点击表情键盘上的删除按钮时调用
+ */
+- (void)emotionDidDeleted:(NSNotification *)note
+{
 }
 
 #pragma mark - set,get

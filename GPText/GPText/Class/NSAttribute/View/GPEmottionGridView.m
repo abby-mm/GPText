@@ -9,11 +9,14 @@
 #import "GPEmottionGridView.h"
 #import "GPEmotion.h"
 #import "GPEmotionView.h"
+#import "GPEmtionPopView.h"
 
 @interface GPEmottionGridView()
 @property (nonatomic, weak) UIButton *deleteButton;
 
 @property (nonatomic, strong) NSMutableArray *emotionViews;
+@property (nonatomic, strong) GPEmtionPopView *popView;
+
 @end
 @implementation GPEmottionGridView
 
@@ -32,6 +35,10 @@
     [deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete_highlighted"] forState:UIControlStateHighlighted];
     [self addSubview:deleteButton];
     self.deleteButton = deleteButton;
+    
+    UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] init];
+    [recognizer addTarget:self action:@selector(longPress:)];
+    [self addGestureRecognizer:recognizer];
 }
 
 - (void)setEmotions:(NSArray *)emotions
@@ -45,6 +52,7 @@
         
         if (i >= currentEmotionViewCount) {
             emotionView = [[GPEmotionView alloc] init];
+            [emotionView addTarget:self action:@selector(emotionClick:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:emotionView];
             [self.emotionViews addObject:emotionView];
         } else {
@@ -84,6 +92,58 @@
     self.deleteButton.y = self.height - self.deleteButton.height;
 
 }
+#pragma mark - 事件响应
+- (void)emotionClick:(GPEmotionView *)emotionView
+{
+    [self.popView showFromEmotionView:emotionView];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.popView dismiss];
+    });
+}
+
+
+
+- (void)longPress:(UILongPressGestureRecognizer *)recognizer
+{
+    CGPoint point = [recognizer locationInView:recognizer.view];
+    
+    GPEmotionView *emotionView = [self emotionViewWithPoint:point];
+    
+    if (recognizer.state == UIGestureRecognizerStateEnded) {
+        [self.popView dismiss];
+        
+        [self selecteEmotion:emotionView.emotion];
+    } else {
+        [self.popView showFromEmotionView:emotionView];
+    }
+}
+- (GPEmotionView *)emotionViewWithPoint:(CGPoint)point
+{
+    __block GPEmotionView *foundEmotionView = nil;
+    
+    [self.emotionViews enumerateObjectsUsingBlock:^(GPEmotionView *emotionView, NSUInteger idx, BOOL *stop) {
+        if (CGRectContainsPoint(emotionView.frame, point)) {
+            foundEmotionView = emotionView;
+            *stop = YES;
+        }
+    }];
+    return foundEmotionView;
+}
+
+- (void)selecteEmotion:(GPEmotion *)emotion
+{
+    if (emotion == nil) return;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:GPEmotionDidSelectedNotification object:nil userInfo:@{GPSelectedEmotion : emotion}];
+}
+
+
+- (void)deleteClick
+{
+    // 发出一个选中表情的通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:GPEmotionDidDeletedNotification object:nil userInfo:nil];
+}
 #pragma mark - set,get
 - (NSMutableArray *)emotionViews
 {
@@ -92,4 +152,12 @@
     }
     return _emotionViews;
 }
+- (GPEmtionPopView *)popView
+{
+    if (!_popView) {
+        self.popView = [GPEmtionPopView popView];
+    }
+    return _popView;
+}
+
 @end

@@ -18,6 +18,8 @@
 		AC6E54451D781E52008C31E0 /* GPEmottionGridView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E54441D781E52008C31E0 /* GPEmottionGridView.m */; };
 		AC6E54491D7826EF008C31E0 /* NSString+Emoji.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E54481D7826EF008C31E0 /* NSString+Emoji.m */; };
 		AC6E544B1D783112008C31E0 /* EmotionIcons in Resources */ = {isa = PBXBuildFile; fileRef = AC6E544A1D783112008C31E0 /* EmotionIcons */; };
+		AC862C5A1D7C5BB9006D359C /* GPEmtionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC862C591D7C5BB9006D359C /* GPEmtionPopView.m */; };
+		AC862C5C1D7C5BCA006D359C /* GPEmtionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC862C5B1D7C5BCA006D359C /* GPEmtionPopView.xib */; };
 		ACF391ED1D76C33E00FE1110 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EC1D76C33E00FE1110 /* main.m */; };
 		ACF391F01D76C33E00FE1110 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EF1D76C33E00FE1110 /* AppDelegate.m */; };
 		ACF391F31D76C33E00FE1110 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391F21D76C33E00FE1110 /* ViewController.m */; };
@@ -77,6 +79,9 @@
 		AC6E54471D7826EF008C31E0 /* NSString+Emoji.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Emoji.h"; sourceTree = "<group>"; };
 		AC6E54481D7826EF008C31E0 /* NSString+Emoji.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Emoji.m"; sourceTree = "<group>"; };
 		AC6E544A1D783112008C31E0 /* EmotionIcons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = EmotionIcons; sourceTree = "<group>"; };
+		AC862C581D7C5BB9006D359C /* GPEmtionPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEmtionPopView.h; sourceTree = "<group>"; };
+		AC862C591D7C5BB9006D359C /* GPEmtionPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEmtionPopView.m; sourceTree = "<group>"; };
+		AC862C5B1D7C5BCA006D359C /* GPEmtionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPEmtionPopView.xib; sourceTree = "<group>"; };
 		ACF391E81D76C33E00FE1110 /* GPText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF391EC1D76C33E00FE1110 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACF391EE1D76C33E00FE1110 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -162,6 +167,9 @@
 				AC6E54441D781E52008C31E0 /* GPEmottionGridView.m */,
 				AC0233731D792184000B02F7 /* GPEmotionView.h */,
 				AC0233741D792184000B02F7 /* GPEmotionView.m */,
+				AC862C581D7C5BB9006D359C /* GPEmtionPopView.h */,
+				AC862C591D7C5BB9006D359C /* GPEmtionPopView.m */,
+				AC862C5B1D7C5BCA006D359C /* GPEmtionPopView.xib */,
 			);
 			name = EmotionKeyboard;
 			sourceTree = "<group>";
@@ -511,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC862C5C1D7C5BCA006D359C /* GPEmtionPopView.xib in Resources */,
 				ACF3923E1D77BCCD00FE1110 /* GPAttributeViewController.storyboard in Resources */,
 				ACF3923C1D76E3CB00FE1110 /* GPHeightViewController.storyboard in Resources */,
 				ACF391FB1D76C33E00FE1110 /* LaunchScreen.storyboard in Resources */,
@@ -598,6 +607,7 @@
 				AC6E52751D7801FA008C31E0 /* UIImage+GPExtion.m in Sources */,
 				ACF392471D77C7CE00FE1110 /* GPTextView.m in Sources */,
 				AC6E543F1D781194008C31E0 /* GPEmotionListView.m in Sources */,
+				AC862C5A1D7C5BB9006D359C /* GPEmtionPopView.m in Sources */,
 				AC6E526E1D77DA22008C31E0 /* UIView+GPExtension.m in Sources */,
 				AC6E52721D7800B2008C31E0 /* GPEmotionKeyboard.m in Sources */,
 				ACF392251D76C77600FE1110 /* GPAttributeViewController.m in Sources */,
