@@ -18,7 +18,6 @@ typedef NS_ENUM(NSInteger,GPTollsBtnType){
 
 
 typedef void(^btnClickBlock)(GPTollsBtnType);
-
 @interface GPToolbar : UIView
 
 @property (nonatomic,copy)btnClickBlock btnClickBlock;

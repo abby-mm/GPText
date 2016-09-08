@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "GPAttributeViewController.h"
+#import "GPPageViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSArray *dataS;
@@ -39,6 +40,7 @@
 {
     return self.dataS.count;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
@@ -51,8 +53,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row == 0) {
-        GPAttributeViewController *attributeVc = [UIStoryboard storyboardWithName:NSStringFromClass([GPAttributeViewController class]) bundle:nil].instantiateInitialViewController;
+        GPAttributeViewController *attributeVc = GPSBVC(GPAttributeViewController);
         [self.navigationController pushViewController:attributeVc animated:YES];
+    }else if (indexPath.row ==1){
+        GPPageViewController *pageVc = GPSBVC(GPPageViewController);
+        [self.navigationController pushViewController:pageVc animated:YES];
     }
 }
 

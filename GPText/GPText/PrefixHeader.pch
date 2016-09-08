@@ -41,6 +41,7 @@
 #define GPEmotionDidDeletedNotification @"GPEmotionDidDeletedNotification"
 // 通知里面取出表情用的key
 #define GPSelectedEmotion @"GPSelectedEmotion"
+#define GPSBVC(name)    [UIStoryboard storyboardWithName:NSStringFromClass([name class]) bundle:nil].instantiateInitialViewController;
 
 #import "UIView+GPExtension.h"
 #import "UIImage+GPExtion.h"
