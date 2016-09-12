@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "GPAttributeViewController.h"
 #import "GPPageViewController.h"
+#import "GPHeightViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSArray *dataS;
@@ -28,7 +29,7 @@
 #pragma mark - 初始化
 - (void)loadData
 {
-    self.dataS = @[@"富文本",@"分页显示文字"];
+    self.dataS = @[@"富文本",@"分页显示文字",@"高亮和网址"];
 }
 - (void)regisCell
 {
@@ -52,13 +53,22 @@
 #pragma mark - 表格的代理
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        GPAttributeViewController *attributeVc = GPSBVC(GPAttributeViewController);
-        [self.navigationController pushViewController:attributeVc animated:YES];
-    }else if (indexPath.row ==1){
-        GPPageViewController *pageVc = GPSBVC(GPPageViewController);
-        [self.navigationController pushViewController:pageVc animated:YES];
+    UIViewController *vc = nil;
+    switch (indexPath.row) {
+        case 0:
+            vc = GPSBVC(GPAttributeViewController);
+            break;
+        case 1:
+            vc = GPSBVC(GPPageViewController);
+            break;
+        case 2:
+            vc = GPSBVC(GPHeightViewController);
+            break;
+        default:
+            break;
     }
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 @end

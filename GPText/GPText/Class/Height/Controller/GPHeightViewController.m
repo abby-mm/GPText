@@ -7,33 +7,39 @@
 //
 
 #import "GPHeightViewController.h"
+#import "GPHegihtTextStorage.h"
 
-@interface GPHeightViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *oneTextView;
-@property (weak, nonatomic) IBOutlet UITextView *twoTextView;
+@interface GPHeightViewController ()<NSLayoutManagerDelegate,UITextViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (nonatomic, strong) GPHegihtTextStorage *hegihtStorage;
 @end
 
 @implementation GPHeightViewController
-
+#pragma mark - 初始化方法
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    self.hegihtStorage = [[GPHegihtTextStorage alloc]init];
+    [self.hegihtStorage addLayoutManager:self.textView.layoutManager];
+    self.textView.layoutManager.delegate = self;
+    [ self.hegihtStorage replaceCharactersInRange:NSMakeRange(0, 0) withString:[NSString stringWithContentsOfURL:[NSBundle.mainBundle URLForResource:@"Height" withExtension:@"txt"] usedEncoding:NULL error:NULL]];
+}
+#pragma mark - 布局代理
+- (BOOL)layoutManager:(NSLayoutManager *)layoutManager shouldBreakLineByWordBeforeCharacterAtIndex:(NSUInteger)charIndex
+{
+    NSRange range;
+    NSURL *linkURL = [layoutManager.textStorage attribute:NSLinkAttributeName atIndex:charIndex effectiveRange:&range];
+    
+    if (linkURL && charIndex > range.location && charIndex <= NSMaxRange(range))
+        return NO;
+    else
+        return YES;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UItextView 代理
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

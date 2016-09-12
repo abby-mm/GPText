@@ -21,6 +21,8 @@
 		AC862C5A1D7C5BB9006D359C /* GPEmtionPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC862C591D7C5BB9006D359C /* GPEmtionPopView.m */; };
 		AC862C5C1D7C5BCA006D359C /* GPEmtionPopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC862C5B1D7C5BCA006D359C /* GPEmtionPopView.xib */; };
 		AC862D1A1D7D46AB006D359C /* GPEmtionTool.m in Sources */ = {isa = PBXBuildFile; fileRef = AC862D191D7D46AB006D359C /* GPEmtionTool.m */; };
+		AC8C39F61D83F768009EE943 /* Height.txt in Resources */ = {isa = PBXBuildFile; fileRef = AC8C39F51D83F768009EE943 /* Height.txt */; };
+		AC8C39F91D83F7F2009EE943 /* GPHegihtTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8C39F81D83F7F2009EE943 /* GPHegihtTextStorage.m */; };
 		ACF391ED1D76C33E00FE1110 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EC1D76C33E00FE1110 /* main.m */; };
 		ACF391F01D76C33E00FE1110 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EF1D76C33E00FE1110 /* AppDelegate.m */; };
 		ACF391F31D76C33E00FE1110 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391F21D76C33E00FE1110 /* ViewController.m */; };
@@ -88,6 +90,9 @@
 		AC862C5B1D7C5BCA006D359C /* GPEmtionPopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPEmtionPopView.xib; sourceTree = "<group>"; };
 		AC862D181D7D46AB006D359C /* GPEmtionTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEmtionTool.h; sourceTree = "<group>"; };
 		AC862D191D7D46AB006D359C /* GPEmtionTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEmtionTool.m; sourceTree = "<group>"; };
+		AC8C39F51D83F768009EE943 /* Height.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Height.txt; sourceTree = "<group>"; };
+		AC8C39F71D83F7F2009EE943 /* GPHegihtTextStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPHegihtTextStorage.h; sourceTree = "<group>"; };
+		AC8C39F81D83F7F2009EE943 /* GPHegihtTextStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPHegihtTextStorage.m; sourceTree = "<group>"; };
 		ACF391E81D76C33E00FE1110 /* GPText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF391EC1D76C33E00FE1110 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACF391EE1D76C33E00FE1110 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -352,6 +357,7 @@
 		ACF392301D76D6B300FE1110 /* Height */ = {
 			isa = PBXGroup;
 			children = (
+				AC8C39F51D83F768009EE943 /* Height.txt */,
 				ACF392311D76D6B300FE1110 /* Controller */,
 				ACF392321D76D6B300FE1110 /* Model */,
 				ACF392331D76D6B300FE1110 /* View */,
@@ -365,6 +371,8 @@
 				ACF392381D76E3C000FE1110 /* GPHeightViewController.h */,
 				ACF392391D76E3C000FE1110 /* GPHeightViewController.m */,
 				ACF3923B1D76E3CB00FE1110 /* GPHeightViewController.storyboard */,
+				AC8C39F71D83F7F2009EE943 /* GPHegihtTextStorage.h */,
+				AC8C39F81D83F7F2009EE943 /* GPHegihtTextStorage.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -542,6 +550,7 @@
 				ACF391FB1D76C33E00FE1110 /* LaunchScreen.storyboard in Resources */,
 				AC6E544B1D783112008C31E0 /* EmotionIcons in Resources */,
 				ACF75B8C1D81534900708389 /* content.txt in Resources */,
+				AC8C39F61D83F768009EE943 /* Height.txt in Resources */,
 				ACF391F81D76C33E00FE1110 /* Assets.xcassets in Resources */,
 				ACF391F61D76C33E00FE1110 /* Main.storyboard in Resources */,
 			);
@@ -619,6 +628,7 @@
 				AC6E526B1D77D5BD008C31E0 /* GPToolbar.m in Sources */,
 				ACF3923A1D76E3C000FE1110 /* GPHeightViewController.m in Sources */,
 				AC6E54491D7826EF008C31E0 /* NSString+Emoji.m in Sources */,
+				AC8C39F91D83F7F2009EE943 /* GPHegihtTextStorage.m in Sources */,
 				AC6E54451D781E52008C31E0 /* GPEmottionGridView.m in Sources */,
 				AC862D1A1D7D46AB006D359C /* GPEmtionTool.m in Sources */,
 				AC6E52781D780846008C31E0 /* GPEmotionToolbar.m in Sources */,
