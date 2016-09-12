@@ -10,6 +10,7 @@
 #import "GPAttributeViewController.h"
 #import "GPPageViewController.h"
 #import "GPHeightViewController.h"
+#import "GPBLankViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) NSArray *dataS;
@@ -29,7 +30,7 @@
 #pragma mark - 初始化
 - (void)loadData
 {
-    self.dataS = @[@"富文本",@"分页显示文字",@"高亮和网址"];
+    self.dataS = @[@"富文本",@"分页显示文字",@"高亮和网址",@"环绕布局"];
 }
 - (void)regisCell
 {
@@ -63,6 +64,9 @@
             break;
         case 2:
             vc = GPSBVC(GPHeightViewController);
+            break;
+        case 3:
+            vc = GPSBVC(GPBLankViewController);
             break;
         default:
             break;
