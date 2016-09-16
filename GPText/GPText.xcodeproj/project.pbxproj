@@ -25,6 +25,8 @@
 		AC8C39F91D83F7F2009EE943 /* GPHegihtTextStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8C39F81D83F7F2009EE943 /* GPHegihtTextStorage.m */; };
 		ACB7EEEA1D864D0A00A767D0 /* GPBLankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB7EEE91D864D0A00A767D0 /* GPBLankViewController.m */; };
 		ACB7EEEC1D864D1700A767D0 /* GPBLankViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB7EEEB1D864D1700A767D0 /* GPBLankViewController.storyboard */; };
+		ACE2A03B1D893FA90017FFF6 /* GPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A03A1D893FA90017FFF6 /* GPDetailViewController.m */; };
+		ACE2A03D1D893FB40017FFF6 /* GPDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE2A03C1D893FB40017FFF6 /* GPDetailViewController.storyboard */; };
 		ACF391ED1D76C33E00FE1110 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EC1D76C33E00FE1110 /* main.m */; };
 		ACF391F01D76C33E00FE1110 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EF1D76C33E00FE1110 /* AppDelegate.m */; };
 		ACF391F31D76C33E00FE1110 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391F21D76C33E00FE1110 /* ViewController.m */; };
@@ -98,6 +100,9 @@
 		ACB7EEE81D864D0A00A767D0 /* GPBLankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBLankViewController.h; sourceTree = "<group>"; };
 		ACB7EEE91D864D0A00A767D0 /* GPBLankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPBLankViewController.m; sourceTree = "<group>"; };
 		ACB7EEEB1D864D1700A767D0 /* GPBLankViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GPBLankViewController.storyboard; sourceTree = "<group>"; };
+		ACE2A0391D893FA90017FFF6 /* GPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPDetailViewController.h; sourceTree = "<group>"; };
+		ACE2A03A1D893FA90017FFF6 /* GPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPDetailViewController.m; sourceTree = "<group>"; };
+		ACE2A03C1D893FB40017FFF6 /* GPDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GPDetailViewController.storyboard; sourceTree = "<group>"; };
 		ACF391E81D76C33E00FE1110 /* GPText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF391EC1D76C33E00FE1110 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACF391EE1D76C33E00FE1110 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -441,6 +446,9 @@
 				AC862D191D7D46AB006D359C /* GPEmtionTool.m */,
 				ACF392401D77C6EB00FE1110 /* GPAPPViewController.h */,
 				ACF392411D77C6EB00FE1110 /* GPAPPViewController.m */,
+				ACE2A0391D893FA90017FFF6 /* GPDetailViewController.h */,
+				ACE2A03A1D893FA90017FFF6 /* GPDetailViewController.m */,
+				ACE2A03C1D893FB40017FFF6 /* GPDetailViewController.storyboard */,
 			);
 			name = AppController;
 			sourceTree = "<group>";
@@ -558,6 +566,7 @@
 				ACF3923C1D76E3CB00FE1110 /* GPHeightViewController.storyboard in Resources */,
 				ACF391FB1D76C33E00FE1110 /* LaunchScreen.storyboard in Resources */,
 				AC6E544B1D783112008C31E0 /* EmotionIcons in Resources */,
+				ACE2A03D1D893FB40017FFF6 /* GPDetailViewController.storyboard in Resources */,
 				ACF75B8C1D81534900708389 /* content.txt in Resources */,
 				AC8C39F61D83F768009EE943 /* Height.txt in Resources */,
 				ACF391F81D76C33E00FE1110 /* Assets.xcassets in Resources */,
@@ -636,6 +645,7 @@
 			files = (
 				AC6E526B1D77D5BD008C31E0 /* GPToolbar.m in Sources */,
 				ACF3923A1D76E3C000FE1110 /* GPHeightViewController.m in Sources */,
+				ACE2A03B1D893FA90017FFF6 /* GPDetailViewController.m in Sources */,
 				AC6E54491D7826EF008C31E0 /* NSString+Emoji.m in Sources */,
 				AC8C39F91D83F7F2009EE943 /* GPHegihtTextStorage.m in Sources */,
 				AC6E54451D781E52008C31E0 /* GPEmottionGridView.m in Sources */,

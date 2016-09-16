@@ -11,6 +11,7 @@
 #import "GPToolbar.h"
 #import "GPEmotionKeyboard.h"
 #import "GPEmotion.h"
+#import "GPDetailViewController.h"
 
 @interface GPAPPViewController ()<UITextViewDelegate>
 @property (nonatomic, weak)GPTextView *textView;
@@ -22,7 +23,7 @@
 #pragma mark - 生命周期
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self setupNav];
     [self setupTextView];
     [self setuipToolbar];
     [self setupNotion];
@@ -39,6 +40,10 @@
 }
 
 #pragma mark - 初始化方法
+- (void)setupNav
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"显示" style:UIBarButtonItemStylePlain target:self action:@selector(post)];
+}
 - (void)setupNotion
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
@@ -136,7 +141,11 @@
 {
     [self.textView deleteBackward];
 }
-
+- (void)post
+{
+    GPDetailViewController *vc = GPSBVC(GPDetailViewController);
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark - set,get
 -(GPEmotionKeyboard *)keyboard

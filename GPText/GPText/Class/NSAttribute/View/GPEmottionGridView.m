@@ -31,11 +31,14 @@
 }
 - (void)addDeletView
 {
-    UIButton *deleteButton = [[UIButton alloc] init];
-    [deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete"] forState:UIControlStateNormal];
-    [deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete_highlighted"] forState:UIControlStateHighlighted];
-    [self addSubview:deleteButton];
-    self.deleteButton = deleteButton;
+    [self addSubview:({
+        UIButton *deleteButton = [[UIButton alloc] init];
+        [deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete"] forState:UIControlStateNormal];
+        [deleteButton setImage:[UIImage imageNamed:@"compose_emotion_delete_highlighted"] forState:UIControlStateHighlighted];
+        [deleteButton addTarget:self action:@selector(deleteClick) forControlEvents:UIControlEventTouchUpInside];
+        self.deleteButton = deleteButton;
+        deleteButton;
+    })];
     
     UILongPressGestureRecognizer *recognizer = [[UILongPressGestureRecognizer alloc] init];
     [recognizer addTarget:self action:@selector(longPress:)];
