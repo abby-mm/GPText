@@ -27,6 +27,7 @@
 - (void)setupNav
 {
     self.navigationItem.title = @"富文本";
+    
 }
 - (void)setupLabel
 {

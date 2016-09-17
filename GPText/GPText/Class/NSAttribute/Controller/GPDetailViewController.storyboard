@@ -16,8 +16,23 @@
                     <view key="view" contentMode="scaleToFill" id="Y0e-mm-ltj">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wzd-yH-2A7" customClass="GPContentView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h0X-0s-DX3" firstAttribute="top" secondItem="wzd-yH-2A7" secondAttribute="bottom" id="0qB-lR-4HY"/>
+                            <constraint firstItem="wzd-yH-2A7" firstAttribute="leading" secondItem="Y0e-mm-ltj" secondAttribute="leading" id="Jqp-E4-PHG"/>
+                            <constraint firstItem="wzd-yH-2A7" firstAttribute="top" secondItem="Y0e-mm-ltj" secondAttribute="top" id="nJ6-pi-y8f"/>
+                            <constraint firstAttribute="trailing" secondItem="wzd-yH-2A7" secondAttribute="trailing" id="zzC-v8-PH3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="contentStrView" destination="wzd-yH-2A7" id="3Ay-JW-phu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7cl-Xh-SUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

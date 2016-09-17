@@ -20,4 +20,7 @@
 
 + (void)addRecentEmotion:(GPEmotion *)emotion;
 
++ (NSArray *)regexResultsWithText:(NSString *)text;
++ (GPEmotion *)emotionWithDesc:(NSString *)desc;
+
 @end

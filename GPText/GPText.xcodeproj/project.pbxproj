@@ -27,6 +27,13 @@
 		ACB7EEEC1D864D1700A767D0 /* GPBLankViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB7EEEB1D864D1700A767D0 /* GPBLankViewController.storyboard */; };
 		ACE2A03B1D893FA90017FFF6 /* GPDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A03A1D893FA90017FFF6 /* GPDetailViewController.m */; };
 		ACE2A03D1D893FB40017FFF6 /* GPDetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACE2A03C1D893FB40017FFF6 /* GPDetailViewController.storyboard */; };
+		ACE2A0401D8C1A4E0017FFF6 /* GPContent.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A03F1D8C1A4E0017FFF6 /* GPContent.m */; };
+		ACE2A0431D8C1BD50017FFF6 /* GPRegexResult.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A0421D8C1BD50017FFF6 /* GPRegexResult.m */; };
+		ACE2A0461D8C1C8B0017FFF6 /* RegexKitLite.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A0451D8C1C8B0017FFF6 /* RegexKitLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		ACE2A0491D8C200F0017FFF6 /* GPEmotionAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A0481D8C200F0017FFF6 /* GPEmotionAttachment.m */; };
+		ACE2A04B1D8C22BA0017FFF6 /* libicucore.A.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE2A04A1D8C22BA0017FFF6 /* libicucore.A.tbd */; };
+		ACE2A04E1D8C2AAF0017FFF6 /* GPContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A04D1D8C2AAF0017FFF6 /* GPContentView.m */; };
+		ACE2A0511D8C2AF30017FFF6 /* GPLink.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A0501D8C2AF30017FFF6 /* GPLink.m */; };
 		ACF391ED1D76C33E00FE1110 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EC1D76C33E00FE1110 /* main.m */; };
 		ACF391F01D76C33E00FE1110 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391EF1D76C33E00FE1110 /* AppDelegate.m */; };
 		ACF391F31D76C33E00FE1110 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF391F21D76C33E00FE1110 /* ViewController.m */; };
@@ -103,6 +110,19 @@
 		ACE2A0391D893FA90017FFF6 /* GPDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPDetailViewController.h; sourceTree = "<group>"; };
 		ACE2A03A1D893FA90017FFF6 /* GPDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPDetailViewController.m; sourceTree = "<group>"; };
 		ACE2A03C1D893FB40017FFF6 /* GPDetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GPDetailViewController.storyboard; sourceTree = "<group>"; };
+		ACE2A03E1D8C1A4E0017FFF6 /* GPContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPContent.h; sourceTree = "<group>"; };
+		ACE2A03F1D8C1A4E0017FFF6 /* GPContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPContent.m; sourceTree = "<group>"; };
+		ACE2A0411D8C1BD50017FFF6 /* GPRegexResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPRegexResult.h; sourceTree = "<group>"; };
+		ACE2A0421D8C1BD50017FFF6 /* GPRegexResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPRegexResult.m; sourceTree = "<group>"; };
+		ACE2A0441D8C1C8B0017FFF6 /* RegexKitLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegexKitLite.h; sourceTree = "<group>"; };
+		ACE2A0451D8C1C8B0017FFF6 /* RegexKitLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegexKitLite.m; sourceTree = "<group>"; };
+		ACE2A0471D8C200F0017FFF6 /* GPEmotionAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPEmotionAttachment.h; sourceTree = "<group>"; };
+		ACE2A0481D8C200F0017FFF6 /* GPEmotionAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPEmotionAttachment.m; sourceTree = "<group>"; };
+		ACE2A04A1D8C22BA0017FFF6 /* libicucore.A.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.A.tbd; path = usr/lib/libicucore.A.tbd; sourceTree = SDKROOT; };
+		ACE2A04C1D8C2AAF0017FFF6 /* GPContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPContentView.h; sourceTree = "<group>"; };
+		ACE2A04D1D8C2AAF0017FFF6 /* GPContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPContentView.m; sourceTree = "<group>"; };
+		ACE2A04F1D8C2AF30017FFF6 /* GPLink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPLink.h; sourceTree = "<group>"; };
+		ACE2A0501D8C2AF30017FFF6 /* GPLink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPLink.m; sourceTree = "<group>"; };
 		ACF391E81D76C33E00FE1110 /* GPText.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPText.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACF391EC1D76C33E00FE1110 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		ACF391EE1D76C33E00FE1110 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -141,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE2A04B1D8C22BA0017FFF6 /* libicucore.A.tbd in Frameworks */,
 				D73CC5E572399BD0019EA580 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +186,7 @@
 		5DD0A536E7D08942C737FB1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ACE2A04A1D8C22BA0017FFF6 /* libicucore.A.tbd */,
 				179DFBF0FCAB926369BE830A /* libPods.a */,
 			);
 			name = Frameworks;
@@ -202,6 +224,8 @@
 		AC6E54461D7826C0008C31E0 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				ACE2A0441D8C1C8B0017FFF6 /* RegexKitLite.h */,
+				ACE2A0451D8C1C8B0017FFF6 /* RegexKitLite.m */,
 				AC6E54471D7826EF008C31E0 /* NSString+Emoji.h */,
 				AC6E54481D7826EF008C31E0 /* NSString+Emoji.m */,
 				AC6E52731D7801FA008C31E0 /* UIImage+GPExtion.h */,
@@ -315,8 +339,16 @@
 		ACF392211D76C73E00FE1110 /* Mode */ = {
 			isa = PBXGroup;
 			children = (
+				ACE2A04F1D8C2AF30017FFF6 /* GPLink.h */,
+				ACE2A0501D8C2AF30017FFF6 /* GPLink.m */,
 				AC6E54401D781331008C31E0 /* GPEmotion.h */,
 				AC6E54411D781331008C31E0 /* GPEmotion.m */,
+				ACE2A03E1D8C1A4E0017FFF6 /* GPContent.h */,
+				ACE2A03F1D8C1A4E0017FFF6 /* GPContent.m */,
+				ACE2A0411D8C1BD50017FFF6 /* GPRegexResult.h */,
+				ACE2A0421D8C1BD50017FFF6 /* GPRegexResult.m */,
+				ACE2A0471D8C200F0017FFF6 /* GPEmotionAttachment.h */,
+				ACE2A0481D8C200F0017FFF6 /* GPEmotionAttachment.m */,
 			);
 			path = Mode;
 			sourceTree = "<group>";
@@ -324,6 +356,8 @@
 		ACF392221D76C73E00FE1110 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				ACE2A04C1D8C2AAF0017FFF6 /* GPContentView.h */,
+				ACE2A04D1D8C2AAF0017FFF6 /* GPContentView.m */,
 				AC6E526F1D77FFB4008C31E0 /* EmotionKeyboard */,
 				ACF392451D77C7CE00FE1110 /* GPTextView.h */,
 				ACF392461D77C7CE00FE1110 /* GPTextView.m */,
@@ -643,6 +677,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACE2A0401D8C1A4E0017FFF6 /* GPContent.m in Sources */,
+				ACE2A0511D8C2AF30017FFF6 /* GPLink.m in Sources */,
 				AC6E526B1D77D5BD008C31E0 /* GPToolbar.m in Sources */,
 				ACF3923A1D76E3C000FE1110 /* GPHeightViewController.m in Sources */,
 				ACE2A03B1D893FA90017FFF6 /* GPDetailViewController.m in Sources */,
@@ -651,17 +687,21 @@
 				AC6E54451D781E52008C31E0 /* GPEmottionGridView.m in Sources */,
 				AC862D1A1D7D46AB006D359C /* GPEmtionTool.m in Sources */,
 				AC6E52781D780846008C31E0 /* GPEmotionToolbar.m in Sources */,
+				ACE2A0491D8C200F0017FFF6 /* GPEmotionAttachment.m in Sources */,
 				ACF392421D77C6EB00FE1110 /* GPAPPViewController.m in Sources */,
 				AC6E52751D7801FA008C31E0 /* UIImage+GPExtion.m in Sources */,
 				ACF75B861D81528800708389 /* GPPageViewController.m in Sources */,
 				ACF392471D77C7CE00FE1110 /* GPTextView.m in Sources */,
 				AC6E543F1D781194008C31E0 /* GPEmotionListView.m in Sources */,
+				ACE2A04E1D8C2AAF0017FFF6 /* GPContentView.m in Sources */,
 				AC862C5A1D7C5BB9006D359C /* GPEmtionPopView.m in Sources */,
 				AC6E526E1D77DA22008C31E0 /* UIView+GPExtension.m in Sources */,
 				AC6E52721D7800B2008C31E0 /* GPEmotionKeyboard.m in Sources */,
 				ACF392251D76C77600FE1110 /* GPAttributeViewController.m in Sources */,
+				ACE2A0461D8C1C8B0017FFF6 /* RegexKitLite.m in Sources */,
 				ACB7EEEA1D864D0A00A767D0 /* GPBLankViewController.m in Sources */,
 				ACF391F31D76C33E00FE1110 /* ViewController.m in Sources */,
+				ACE2A0431D8C1BD50017FFF6 /* GPRegexResult.m in Sources */,
 				ACF391F01D76C33E00FE1110 /* AppDelegate.m in Sources */,
 				AC6E54421D781331008C31E0 /* GPEmotion.m in Sources */,
 				ACF391ED1D76C33E00FE1110 /* main.m in Sources */,

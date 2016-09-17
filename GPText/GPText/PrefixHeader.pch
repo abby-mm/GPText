@@ -42,11 +42,16 @@
 // 通知里面取出表情用的key
 #define GPSelectedEmotion @"GPSelectedEmotion"
 #define GPSBVC(name)    [UIStoryboard storyboardWithName:NSStringFromClass([name class]) bundle:nil].instantiateInitialViewController;
-
+#define GPStatusOrginalTextFont [UIFont systemFontOfSize:14]
+#define GPLinkText @"GPLinkText"
+#define GPLinkDidSelectedNotification @"GPLinkDidSelectedNotification"
 #import "UIView+GPExtension.h"
 #import "UIImage+GPExtion.h"
 #import <MJExtension.h>
 #import <SDAutoLayout.h>
 #import "NSString+Emoji.h"
+#import "RegexKitLite.h"
+#import "GPEmtionTool.h"
+#import "GPRegexResult.h"
 
 #endif

@@ -11,6 +11,7 @@
 #import "GPEmtionTool.h"
 #import "GPEmotion.h"
 #import <MJExtension.h>
+#import "GPRegexResult.h"
 
 static NSArray *_defaultEmotions;
 static NSArray *_emojiEmotions;
@@ -59,6 +60,38 @@ static NSMutableArray *_recentEmotions;
     }
     return _recentEmotions;
 }
++ (NSArray *)regexResultsWithText:(NSString *)text
+{
+    // 用来存放所有的匹配结果
+    NSMutableArray *regexResults = [NSMutableArray array];
+    
+    // 匹配表情
+    NSString *emotionRegex = @"\\[[a-zA-Z0-9\\u4e00-\\u9fa5]+\\]";
+    [text enumerateStringsMatchedByRegex:emotionRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+        GPRegexResult *rr = [[GPRegexResult alloc] init];
+        rr.string = *capturedStrings;
+        rr.range = *capturedRanges;
+        rr.emotion = YES;
+        [regexResults addObject:rr];
+    }];
+    
+    // 匹配非表情
+    [text enumerateStringsSeparatedByRegex:emotionRegex usingBlock:^(NSInteger captureCount, NSString *const __unsafe_unretained *capturedStrings, const NSRange *capturedRanges, volatile BOOL *const stop) {
+        GPRegexResult *rr = [[GPRegexResult alloc] init];
+        rr.string = *capturedStrings;
+        rr.range = *capturedRanges;
+        rr.emotion = NO;
+        [regexResults addObject:rr];
+    }];
+    
+    // 排序
+    [regexResults sortUsingComparator:^NSComparisonResult(GPRegexResult *rr1, GPRegexResult *rr2) {
+        NSInteger loc1 = rr1.range.location;
+        NSInteger loc2 = rr2.range.location;
+        return [@(loc1) compare:@(loc2)];
+    }];
+    return regexResults;
+}
 
 + (void)addRecentEmotion:(GPEmotion *)emotion
 {
@@ -70,5 +103,29 @@ static NSMutableArray *_recentEmotions;
     [_recentEmotions insertObject:emotion atIndex:0];
     
     [NSKeyedArchiver archiveRootObject:_recentEmotions toFile:GPRecentFilepath];
+}
+
++ (GPEmotion *)emotionWithDesc:(NSString *)desc
+{
+    if (!desc) return nil;
+    
+    __block GPEmotion *foundEmotion = nil;
+    
+    [[self defaultEmotions] enumerateObjectsUsingBlock:^(GPEmotion *emotion, NSUInteger idx, BOOL *stop) {
+        if ([desc isEqualToString:emotion.chs] || [desc isEqualToString:emotion.cht]) {
+            foundEmotion = emotion;
+            *stop = YES;
+        }
+    }];
+    if (foundEmotion) return foundEmotion;
+    
+    [[self lxhEmotions] enumerateObjectsUsingBlock:^(GPEmotion *emotion, NSUInteger idx, BOOL *stop) {
+        if ([desc isEqualToString:emotion.chs] || [desc isEqualToString:emotion.cht]) {
+            foundEmotion = emotion;
+            *stop = YES;
+        }
+    }];
+    
+    return foundEmotion;
 }
 @end

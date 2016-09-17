@@ -60,6 +60,7 @@
     
     if (emotion.emoji) { // emoji表情
         [self insertText:emotion.emoji];
+        
     } else {
         
         NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithAttributedString:self.attributedText];

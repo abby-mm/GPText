@@ -11,6 +11,8 @@
 @interface GPEmotion : NSObject
 
 @property (nonatomic, copy) NSString *chs; // 描述
+@property (nonatomic, copy) NSString *cht; // 描述
+
 @property (nonatomic, copy) NSString *png; // 图片名
 @property (nonatomic, copy) NSString *code; // 编码
 @property (nonatomic, copy) NSString *emoji; // 字符
